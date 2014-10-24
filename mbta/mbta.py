@@ -40,11 +40,18 @@ class mbta:
     response = self.__makeRequest(url)
     return response
 
-  def stopsByRoute(self):
-    pass
+  def stopsByRoute(self,route):
+    url=self.__getURL("stopsbyroute")
+    data['route']=route
+    response = self.__makeRequest(url)
+    return response
 
-  def stopsByLocation(self):
-    pass
+  def stopsByLocation(self,lat,lon):
+     url=self.__getURL("stopsbylocation")
+    data['lat']=lat
+    data['lon']=lon
+    response = self.__makeRequest(url)
+    return response
 
   def scheduleByStop(self):
     pass
