@@ -34,8 +34,11 @@ class mbta:
     response = self.__makeRequest(url)
     return response 
 
-  def routesByStop(self):
-    pass
+  def routesByStop(self, stop_id):
+    url=self.__getURL("routesbystop")
+    data['stop_id']=stop_id
+    response = self.__makeRequest(url)
+    return response
 
   def stopsByRoute(self):
     pass
