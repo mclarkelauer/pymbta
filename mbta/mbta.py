@@ -47,7 +47,7 @@ class mbta:
     return response
 
   def stopsByLocation(self,lat,lon):
-     url=self.__getURL("stopsbylocation")
+    url=self.__getURL("stopsbylocation")
     data['lat']=lat
     data['lon']=lon
     response = self.__makeRequest(url)
