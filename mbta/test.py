@@ -16,9 +16,15 @@ class badKeyTest(unittest.TestCase):
     self.assertRaises(urllib2.HTTPError,lambda: self.mbtaHandle.routes())
 
 class singleRequestTests(baseTestCase):
-  def test_routes(self):
-    
-
+  def test_routes_modes(self):
+    response = self.mbtaHandle.routes()
+    modes = []
+    for m in response["mode"]:
+      modes.append(m["mode_name"])
+    self.assertTrue(modes)
+    self.assertTrue("Subway" in modes)
+    self.assertTrue("Bus" in modes)
+      
 if __name__ == '__main__':
   unittest.main()
     
